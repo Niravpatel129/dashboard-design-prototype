@@ -1,5 +1,5 @@
 import React from "react";
-import "./login.scss";
+import "./Login.scss";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Typography } from "@material-ui/core";
@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   }
 });
 
-function Login() {
+function ForgotPassword({ renderForgotPassword, renderRegister }) {
   const classes = useStyles();
 
   return (
@@ -33,25 +33,25 @@ function Login() {
         gutterBottom
         className={classes.caption}
       >
-        Welcome back! Please login to your account.
+        Enter your email and we send you a password reset link.
       </Typography>
       <form className="form">
-        <TextField id="standard-basic" label="Username" />
+        <TextField id="standard-basic" label="Email" />
         <br />
-        <TextField
-          id="standard-basic"
-          label="Password"
-          helperText="Forgot Password"
-        />
-        <br />
-        <br />
+        <Typography
+          variant="caption"
+          display="block"
+          gutterBottom
+          className={classes.caption}
+        >
+          <p onClick={renderForgotPassword}>Forgot Password</p>
+        </Typography>
         <div className="buttons">
-          <Button variant="contained">Login</Button>
-          <Button variant="outlined">Signup</Button>
+          <Button variant="contained">Submit Request</Button>
         </div>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default ForgotPassword;

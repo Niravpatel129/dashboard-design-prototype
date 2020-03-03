@@ -1,0 +1,19 @@
+.ChartsContent {
+  .ChartsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    grid-column-gap: 20px;
+    grid-row-gap: 1em;
+  }
+
+  .charts-row1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    .chart {
+      width: 400px;
+      height: 30px;
+    }
+  }
+}
