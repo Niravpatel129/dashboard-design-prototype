@@ -22,7 +22,6 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 
 import "./NavBar.scss";
 import { Badge } from "@material-ui/core";
-import ChartsContent from "../ChartsContent/ChartsContent";
 
 const drawerWidth = 240;
 
@@ -77,17 +76,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up("sm")]: {
       width: theme.spacing(9) + 1
     }
-  },
-  toolbar: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: theme.spacing(0, 1),
-    ...theme.mixins.toolbar
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3)
   }
 }));
 
@@ -154,12 +142,12 @@ export default function MiniDrawer() {
       </AppBar>
       <Drawer
         variant="permanent"
-        className={clsx(classes.drawer, {
+        className={clsx(classes.drawer, classes.drawerTheme, {
           [classes.drawerOpen]: open,
           [classes.drawerClose]: !open
         })}
         classes={{
-          paper: clsx({
+          paper: clsx(classes.drawerTheme, {
             [classes.drawerOpen]: open,
             [classes.drawerClose]: !open
           })
@@ -187,7 +175,7 @@ export default function MiniDrawer() {
             "Calender"
           ].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>
+              <ListItemIcon className={classes.drawerTheme}>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
@@ -195,10 +183,6 @@ export default function MiniDrawer() {
           ))}
         </List>
       </Drawer>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <ChartsContent />
-      </main>
     </div>
   );
 }

@@ -17,6 +17,10 @@ const useStyles = makeStyles({
 function ForgotPassword({ renderForgotPassword, renderRegister }) {
   const classes = useStyles();
 
+  const onSubmitRequest = () => {
+    renderRegister();
+  };
+
   return (
     <div className="login">
       <Typography
@@ -47,7 +51,9 @@ function ForgotPassword({ renderForgotPassword, renderRegister }) {
           <p onClick={renderForgotPassword}>Forgot Password</p>
         </Typography>
         <div className="buttons">
-          <Button variant="contained">Submit Request</Button>
+          <Button variant="contained" onClick={onSubmitRequest}>
+            Submit Request
+          </Button>
         </div>
       </form>
     </div>

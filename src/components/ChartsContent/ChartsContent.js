@@ -15,17 +15,37 @@ const options = {
   ]
 };
 
+const options2 = {
+  title: {
+    text: "My stock chart"
+  },
+  series: [
+    {
+      data: [1, 2, 1, 4, 3, 6, 7, 3, 8, 6, 9]
+    }
+  ]
+};
+
 function ChartsContent() {
   return (
     <div className="ChartsContent">
-      <div className="charts-row1">
-        <div className="chart">
+      <div className="wrapper">
+        <div className="row1">
+          <HighchartsReact highcharts={Highcharts} options={options} />
+          <HighchartsReact highcharts={Highcharts} options={options} />
           <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
-        <div className="chart">
+
+        <div className="row2">
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options2}
+            constructorType={"chart"}
+          />
           <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
-        <div className="chart">
+        <div className="row3">
+          <HighchartsReact highcharts={Highcharts} options={options} />
           <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
       </div>
