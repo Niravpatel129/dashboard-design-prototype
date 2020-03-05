@@ -47,9 +47,8 @@ function ForgotPassword({ renderForgotPassword, renderRegister }) {
           display="block"
           gutterBottom
           className={classes.caption}
-        >
-          <p onClick={renderForgotPassword}>Forgot Password</p>
-        </Typography>
+        ></Typography>
+        <br />
         <div className="buttons">
           <Button variant="contained" onClick={onSubmitRequest}>
             Submit Request

@@ -91,7 +91,9 @@ function Register({ renderLogin }) {
           gutterBottom
           className={classes.caption}
         >
-          <p onClick={renderLogin}>Already have an account? Login</p>
+          <p className="redirectLink" onClick={renderLogin}>
+            Already have an account? Login
+          </p>
         </Typography>
         <div className="buttons">
           <Button variant="outlined" onClick={handleSignup}>

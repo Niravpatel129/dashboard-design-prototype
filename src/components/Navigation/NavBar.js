@@ -1,17 +1,14 @@
 import React from "react";
 import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -31,12 +28,30 @@ const useStyles = makeStyles(theme => ({
   },
   drawerTheme: {
     backgroundColor: "#43425D",
-    color: "white"
+    color: "white",
+    zIndex: 9999
+  },
+  paperTheme: {
+    width: "40px"
+  },
+  listItemTheme: {},
+  toolbarTheme: {
+    backgroundColor: "white",
+    color: "black",
+    boxShadow: "none"
+  },
+  toolbar: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar
   },
   appBar: {
-    zIndex: theme.zIndex.drawer + 1,
+    boxShadow: " 0 4px 3px 0 rgba(0, 0, 0, 0.05)",
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
+
       duration: theme.transitions.duration.leavingScreen
     })
   },
@@ -49,7 +64,7 @@ const useStyles = makeStyles(theme => ({
     })
   },
   menuButton: {
-    marginRight: 36
+    marginRight: "-5px"
   },
   hide: {
     display: "none"
@@ -74,22 +89,21 @@ const useStyles = makeStyles(theme => ({
     overflowX: "hidden",
     width: theme.spacing(7) + 1,
     [theme.breakpoints.up("sm")]: {
-      width: theme.spacing(9) + 1
+      // width: theme.spacing(9) + 1
     }
   }
 }));
 
 export default function MiniDrawer() {
   const classes = useStyles();
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
   const handleDrawerClose = () => {
-    setOpen(false);
+    if (open) {
+      setOpen(false);
+    } else {
+      setOpen(true);
+    }
   };
 
   return (
@@ -101,22 +115,8 @@ export default function MiniDrawer() {
           [classes.appBarShift]: open
         })}
       >
-        <div className="menubar">
-          <Toolbar className={classes.menubar}>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              edge="start"
-              className={clsx(classes.menuButton, {
-                [classes.hide]: open
-              })}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" noWrap>
-              AWESOME DASH
-            </Typography>
+        <div className="toolbar">
+          <Toolbar className={classes.toolbarTheme} variant="dense">
             <div className="inside">
               <IconButton
                 aria-label="show 11 new notifications"
@@ -154,12 +154,11 @@ export default function MiniDrawer() {
         }}
       >
         <div className={classes.toolbar}>
+          {open && <h4>AWESOME DASH</h4>}
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
+            <MenuIcon
+              className={clsx(classes.drawerTheme, classes.menuButton)}
+            />
           </IconButton>
         </div>
         <Divider />
@@ -174,7 +173,7 @@ export default function MiniDrawer() {
             "Chat Room",
             "Calender"
           ].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} className={classes.listItemTheme}>
               <ListItemIcon className={classes.drawerTheme}>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>

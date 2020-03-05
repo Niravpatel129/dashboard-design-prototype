@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   h1: {
@@ -16,6 +17,12 @@ const useStyles = makeStyles({
 
 function Login({ renderForgotPassword, renderRegister }) {
   const classes = useStyles();
+  let history = useHistory();
+
+  const handleLogin = () => {
+    console.log("login");
+    history.push("/dashboard");
+  };
 
   return (
     <div className="login">
@@ -47,10 +54,14 @@ function Login({ renderForgotPassword, renderRegister }) {
           gutterBottom
           className={classes.caption}
         >
-          <p onClick={renderForgotPassword}>Forgot Password</p>
+          <p className="redirectLink" onClick={renderForgotPassword}>
+            Forgot Password
+          </p>
         </Typography>
         <div className="buttons">
-          <Button variant="contained">Login</Button>
+          <Button variant="contained" onClick={handleLogin}>
+            Login
+          </Button>
           <Button variant="outlined" onClick={renderRegister}>
             Signup
           </Button>
