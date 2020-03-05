@@ -74,6 +74,7 @@ function Register({ renderLogin }) {
           onChange={handleFormChange}
           value={formData.password}
           name="password"
+          type="password"
         />
         <br />
         <TextField
@@ -82,6 +83,7 @@ function Register({ renderLogin }) {
           onChange={handleFormChange}
           value={formData.confirmPassword}
           name="confirmPassword"
+          type="password"
         />
         <br />
         <br />

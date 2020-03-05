@@ -45,7 +45,7 @@ function Login({ renderForgotPassword, renderRegister }) {
       <form className="form">
         <TextField id="standard-basic" label="Username" />
         <br />
-        <TextField id="standard-basic" label="Password" />
+        <TextField id="standard-basic" label="Password" type="password" />
         <br />
         <br />
         <Typography

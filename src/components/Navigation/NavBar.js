@@ -34,12 +34,13 @@ const useStyles = makeStyles(theme => ({
   paperTheme: {
     width: "40px"
   },
-  listItemTheme: {},
+  navbarTitle: { marginRight: "auto", paddingLeft: "10px" },
   toolbarTheme: {
     backgroundColor: "white",
     color: "black",
     boxShadow: "none"
   },
+
   toolbar: {
     display: "flex",
     alignItems: "center",
@@ -154,7 +155,7 @@ export default function MiniDrawer() {
         }}
       >
         <div className={classes.toolbar}>
-          {open && <h4>AWESOME DASH</h4>}
+          {open && <h4 className={classes.navbarTitle}>AWESOME DASH</h4>}
           <IconButton onClick={handleDrawerClose}>
             <MenuIcon
               className={clsx(classes.drawerTheme, classes.menuButton)}
