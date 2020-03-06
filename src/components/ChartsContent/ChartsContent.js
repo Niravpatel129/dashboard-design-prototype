@@ -30,13 +30,17 @@ function ChartsContent() {
   return (
     <div className="ChartsContent">
       <div className="wrapper">
-        <div className="row1">
-          <HighchartsReact highcharts={Highcharts} options={options} />
+        <div className="row row1">
+          <HighchartsReact
+            className="chart"
+            highcharts={Highcharts}
+            options={options}
+          />
           <HighchartsReact highcharts={Highcharts} options={options} />
           <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
 
-        <div className="row2">
+        <div className="row row2">
           <HighchartsReact
             highcharts={Highcharts}
             options={options2}
@@ -44,7 +48,7 @@ function ChartsContent() {
           />
           <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
-        <div className="row3">
+        <div className="row row3">
           <HighchartsReact highcharts={Highcharts} options={options} />
           <HighchartsReact highcharts={Highcharts} options={options} />
         </div>

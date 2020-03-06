@@ -6,6 +6,7 @@ import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import clsx from "clsx";
 
 const useStyles = makeStyles({
   h1: {
@@ -49,7 +50,7 @@ function Login({ renderForgotPassword, renderRegister }) {
         variant="h4"
         component="h2"
         gutterBottom
-        className={classes.h1}
+        className={clsx(classes.h1, "loginTitle")}
       >
         AWESOME DASH
       </Typography>

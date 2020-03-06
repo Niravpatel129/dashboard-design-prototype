@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navigation/NavBar";
 import ChartsContent from "../components/ChartsContent/ChartsContent";
 import { makeStyles } from "@material-ui/core";
+import clsx from "clsx";
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -19,9 +20,8 @@ function DashboardPage() {
   return (
     <div>
       <Navbar />
-      <main className={classes.content}>
+      <main className={clsx(classes.content, "DashboardPage")}>
         <div className={classes.toolbar} />
-
         <ChartsContent />
       </main>
     </div>

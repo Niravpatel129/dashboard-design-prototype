@@ -24,7 +24,7 @@
     justify-content: space-between;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     flex-direction: column;
     .bg-image {
       flex: 1;
@@ -40,10 +40,11 @@
       background-color: white;
       width: 94vw;
       padding: 1rem;
-      opacity: 0.5;
+      opacity: 0.6;
       border-radius: 1rem;
-
       bottom: 1px;
+      padding-top: 2rem;
+      padding-bottom: 2.3rem;
     }
   }
 }

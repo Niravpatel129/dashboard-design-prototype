@@ -50,19 +50,21 @@ function NavBar() {
             <div className="inside">
               <IconButton
                 aria-label="show 11 new notifications"
-                color="inherit"
+                color="primary"
               >
-                <Badge badgeContent={2} color="secondary">
+                <Badge badgeContent={2}>
                   <NotificationsIcon />
                 </Badge>
               </IconButton>
-              <span className="name"> John Doe</span>
+              <span className="name" color="primary">
+                John Doe
+              </span>
 
               <IconButton
                 aria-label="account of current user"
                 aria-controls="primary-search-account-menu"
                 aria-haspopup="true"
-                color="inherit"
+                color="primary"
               >
                 <AccountCircle />
               </IconButton>
