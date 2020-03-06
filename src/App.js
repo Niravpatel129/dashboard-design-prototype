@@ -8,8 +8,9 @@ import {
   Redirect
 } from "react-router-dom";
 
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/LoginPage.js";
 import DashboardPage from "./pages/DashboardPage";
+
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 // Simple theme thats present across the application
