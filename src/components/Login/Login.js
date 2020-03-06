@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.scss";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles({
   h1: {
@@ -17,11 +18,29 @@ const useStyles = makeStyles({
 
 function Login({ renderForgotPassword, renderRegister }) {
   const classes = useStyles();
-  let history = useHistory();
+  const history = useHistory();
+  const [userData, setUserData] = useState({
+    username: "",
+    password: ""
+  });
+
+  const users = useSelector(state => state.loginsReducer);
+
+  const handleInputChange = e => {
+    setUserData({ ...userData, [e.target.name]: e.target.value });
+  };
 
   const handleLogin = () => {
-    console.log("login");
-    history.push("/dashboard");
+    if (
+      users.find(user => {
+        return (
+          user.username === userData.username &&
+          user.password === userData.password
+        );
+      })
+    ) {
+      history.push("/dashboard");
+    }
   };
 
   return (
@@ -43,9 +62,21 @@ function Login({ renderForgotPassword, renderRegister }) {
         Welcome back! Please login to your account.
       </Typography>
       <form className="form">
-        <TextField id="standard-basic" label="Username" />
+        <TextField
+          label="Username"
+          type="text"
+          name="username"
+          value={userData.username}
+          onChange={handleInputChange}
+        />
         <br />
-        <TextField id="standard-basic" label="Password" type="password" />
+        <TextField
+          label="Password"
+          type="password"
+          name="password"
+          value={userData.password}
+          onChange={handleInputChange}
+        />
         <br />
         <br />
         <Typography

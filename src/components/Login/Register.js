@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import "./Login.scss";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles({
-  h1: {
-    letterSpacing: "5px"
-  },
-  caption: {
-    opacity: 0.4
-  }
-});
+import { useDispatch } from "react-redux";
 
 function Register({ renderLogin }) {
   const classes = useStyles();
@@ -24,13 +15,16 @@ function Register({ renderLogin }) {
     confirmPassword: ""
   });
 
+  const dispatch = useDispatch(null);
+
   const handleFormChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSignup = e => {
     e.preventDefault();
-    console.log(formData);
+    dispatch({ type: "REGISTER_USER", payload: formData });
+    renderLogin();
   };
 
   return (
@@ -51,39 +45,41 @@ function Register({ renderLogin }) {
       >
         Please complete to create your account.
       </Typography>
-      <form className="form">
+      <form className="form" onSubmit={handleSignup}>
         <TextField
-          id="standard-basic"
           label="Username"
           onChange={handleFormChange}
           value={formData.username}
           name="username"
+          required
         />
         <br />
         <TextField
-          id="standard-basic"
+          type="email"
           label="Email"
           onChange={handleFormChange}
           value={formData.email}
           name="email"
+          required
         />
         <br />
         <TextField
-          id="standard-basic"
           label="Password"
           onChange={handleFormChange}
           value={formData.password}
           name="password"
           type="password"
+          required
         />
         <br />
         <TextField
-          id="standard-basic"
           label="Confirm Password"
           onChange={handleFormChange}
           value={formData.confirmPassword}
           name="confirmPassword"
           type="password"
+          pattern={formData.password}
+          required
         />
         <br />
         <br />
@@ -97,14 +93,19 @@ function Register({ renderLogin }) {
             Already have an account? Login
           </p>
         </Typography>
-        <div className="buttons">
-          <Button variant="outlined" onClick={handleSignup}>
-            Signup
-          </Button>
-        </div>
+        <TextField type="submit" />
       </form>
     </div>
   );
 }
+
+const useStyles = makeStyles({
+  h1: {
+    letterSpacing: "5px"
+  },
+  caption: {
+    opacity: 0.4
+  }
+});
 
 export default Register;

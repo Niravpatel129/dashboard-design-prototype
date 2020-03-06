@@ -14,11 +14,11 @@ const useStyles = makeStyles({
   }
 });
 
-function ForgotPassword({ renderForgotPassword, renderRegister }) {
+function ForgotPassword({ renderLogin }) {
   const classes = useStyles();
 
   const onSubmitRequest = () => {
-    renderRegister();
+    renderLogin();
   };
 
   return (
@@ -40,7 +40,7 @@ function ForgotPassword({ renderForgotPassword, renderRegister }) {
         Enter your email and we send you a password reset link.
       </Typography>
       <form className="form">
-        <TextField id="standard-basic" label="Email" />
+        <TextField label="Email" />
         <br />
         <Typography
           variant="caption"

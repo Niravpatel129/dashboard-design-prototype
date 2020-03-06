@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -16,16 +17,118 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-
-import "./NavBar.scss";
 import { Badge } from "@material-ui/core";
 
+import "./NavBar.scss";
+
 const drawerWidth = 240;
+
+function NavBar() {
+  const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const [selectedIndex] = useState("Dashboard");
+
+  const handleDrawerToggle = () => {
+    if (open) {
+      setOpen(false);
+    } else {
+      setOpen(true);
+    }
+  };
+
+  return (
+    <div className={clsx(classes.root, "NavBar")}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open
+        })}
+      >
+        <div className="toolbar">
+          <Toolbar className={classes.toolbarTheme} variant="dense">
+            <div className="inside">
+              <IconButton
+                aria-label="show 11 new notifications"
+                color="inherit"
+              >
+                <Badge badgeContent={2} color="secondary">
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+              <span className="name"> John Doe</span>
+
+              <IconButton
+                aria-label="account of current user"
+                aria-controls="primary-search-account-menu"
+                aria-haspopup="true"
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+            </div>
+          </Toolbar>
+        </div>
+      </AppBar>
+      <Drawer
+        variant="permanent"
+        className={clsx(classes.drawer, classes.drawerTheme, {
+          [classes.drawerOpen]: open,
+          [classes.drawerClose]: !open
+        })}
+        classes={{
+          paper: clsx(classes.drawerTheme, {
+            [classes.drawerOpen]: open,
+            [classes.drawerClose]: !open
+          })
+        }}
+      >
+        <div className={classes.toolbar}>
+          {open && <h4 className={classes.navbarTitle}>AWESOME DASH</h4>}
+          <IconButton onClick={handleDrawerToggle}>
+            <MenuIcon
+              className={clsx(classes.drawerTheme, classes.menuButton)}
+            />
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          {[
+            "Home",
+            "Dashboard",
+            "About",
+            "Products",
+            "Invoices",
+            "Mail Marketing",
+            "Chat Room",
+            "Calender"
+          ].map((text, index) => (
+            <ListItem
+              button
+              key={text}
+              className={(text === selectedIndex && classes.selectedItem) || ""}
+            >
+              <ListItemIcon>
+                {index % 2 === 0 ? (
+                  <InboxIcon color="secondary" />
+                ) : (
+                  <MailIcon color="secondary" />
+                )}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+    </div>
+  );
+}
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
   },
+  selectedItem: { backgroundColor: "#3B3A53" },
   drawerTheme: {
     backgroundColor: "#43425D",
     color: "white",
@@ -89,100 +192,8 @@ const useStyles = makeStyles(theme => ({
     }),
     overflowX: "hidden",
     width: theme.spacing(7) + 1,
-    [theme.breakpoints.up("sm")]: {
-      // width: theme.spacing(9) + 1
-    }
+    [theme.breakpoints.up("sm")]: {}
   }
 }));
 
-export default function MiniDrawer() {
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerClose = () => {
-    if (open) {
-      setOpen(false);
-    } else {
-      setOpen(true);
-    }
-  };
-
-  return (
-    <div className={clsx(classes.root, "NavBar")}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open
-        })}
-      >
-        <div className="toolbar">
-          <Toolbar className={classes.toolbarTheme} variant="dense">
-            <div className="inside">
-              <IconButton
-                aria-label="show 11 new notifications"
-                color="inherit"
-              >
-                <Badge badgeContent={11} color="secondary">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
-              <span className="name"> John Doe</span>
-
-              <IconButton
-                aria-label="account of current user"
-                aria-controls="primary-search-account-menu"
-                aria-haspopup="true"
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-            </div>
-          </Toolbar>
-        </div>
-      </AppBar>
-      <Drawer
-        variant="permanent"
-        className={clsx(classes.drawer, classes.drawerTheme, {
-          [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open
-        })}
-        classes={{
-          paper: clsx(classes.drawerTheme, {
-            [classes.drawerOpen]: open,
-            [classes.drawerClose]: !open
-          })
-        }}
-      >
-        <div className={classes.toolbar}>
-          {open && <h4 className={classes.navbarTitle}>AWESOME DASH</h4>}
-          <IconButton onClick={handleDrawerClose}>
-            <MenuIcon
-              className={clsx(classes.drawerTheme, classes.menuButton)}
-            />
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          {[
-            "Home",
-            "Dashboard",
-            "About",
-            "Products",
-            "Invoices",
-            "Mail Marketing",
-            "Chat Room",
-            "Calender"
-          ].map((text, index) => (
-            <ListItem button key={text} className={classes.listItemTheme}>
-              <ListItemIcon className={classes.drawerTheme}>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-    </div>
-  );
-}
+export default NavBar;

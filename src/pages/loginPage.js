@@ -36,7 +36,7 @@ function LoginPage() {
       )}
       {rendering === "register" && <Register renderLogin={renderLogin} />}
       {rendering === "forgotPassword" && (
-        <ForgotPassword renderRegister={renderRegister} />
+        <ForgotPassword renderLogin={renderLogin} />
       )}
     </div>
   );
