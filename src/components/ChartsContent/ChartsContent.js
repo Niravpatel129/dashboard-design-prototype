@@ -2,18 +2,9 @@ import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-import "./ChartsContent.scss";
+import Grid from "@material-ui/core/Grid";
 
-const options = {
-  title: {
-    text: "My chart"
-  },
-  series: [
-    {
-      data: [1, 2, 3]
-    }
-  ]
-};
+import "./ChartsContent.scss";
 
 const options2 = {
   title: {
@@ -29,7 +20,59 @@ const options2 = {
 function ChartsContent() {
   return (
     <div className="ChartsContent">
-      <div className="wrapper">
+      <h2>Overview</h2>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={4}>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options2}
+            constructorType={"chart"}
+          />{" "}
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options2}
+            constructorType={"chart"}
+          />{" "}
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options2}
+            constructorType={"chart"}
+          />{" "}
+        </Grid>
+        <Grid item xs={12} sm={8}>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options2}
+            constructorType={"chart"}
+          />{" "}
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options2}
+            constructorType={"chart"}
+          />{" "}
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options2}
+            constructorType={"chart"}
+          />{" "}
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options2}
+            constructorType={"chart"}
+          />{" "}
+        </Grid>
+      </Grid>
+      {/* <div className="wrapper">
         <div className="row row1">
           <HighchartsReact
             className="chart"
@@ -52,7 +95,7 @@ function ChartsContent() {
           <HighchartsReact highcharts={Highcharts} options={options} />
           <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

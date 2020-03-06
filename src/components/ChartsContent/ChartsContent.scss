@@ -1,69 +1,11 @@
 .ChartsContent {
-  margin-top: 1rem;
+  margin-top: 4.5rem;
   margin-left: 7rem;
   margin-right: 3rem;
-  box-sizing: border-box;
-
-  .row1 {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 2rem;
-    div {
-      width: 30%;
-    }
-  }
-
-  .row2 {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 2rem;
-
-    div:first-child {
-      width: 65%;
-    }
-
-    div {
-      width: 30%;
-    }
-  }
-
-  .row3 {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 2rem;
-
-    div {
-      width: 48%;
-    }
-  }
-
-  @media only screen and (max-width: 700px) {
-    div {
-      padding-bottom: 3rem;
-    }
-    .row1 {
-      display: block;
-      div {
-        width: 100%;
-      }
-    }
-
-    .row2 {
-      display: block;
-      div {
-        width: 100%;
-      }
-
-      div:first-child {
-        width: 100%;
-      }
-    }
-
-    .row3 {
-      display: block;
-      div {
-        width: 100%;
-      }
-    }
+  h2 {
+    font-family: "Source Sans Pro";
+    font-weight: 100;
+    font-size: 1.3rem;
+    padding-bottom: 0.9rem;
   }
 }

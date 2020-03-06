@@ -9,17 +9,14 @@ function LoginPage() {
   const [rendering, setRendering] = useState("login");
 
   const renderForgotPassword = () => {
-    console.log("render forgot password");
     setRendering("forgotPassword");
   };
 
   const renderRegister = () => {
-    console.log("render register");
     setRendering("register");
   };
 
   const renderLogin = () => {
-    console.log("render login");
     setRendering("login");
   };
 

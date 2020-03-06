@@ -5,6 +5,15 @@ import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useDispatch } from "react-redux";
 
+const useStyles = makeStyles({
+  h1: {
+    letterSpacing: "5px"
+  },
+  caption: {
+    opacity: 0.4
+  }
+});
+
 function Register({ renderLogin }) {
   const classes = useStyles();
 
@@ -98,14 +107,5 @@ function Register({ renderLogin }) {
     </div>
   );
 }
-
-const useStyles = makeStyles({
-  h1: {
-    letterSpacing: "5px"
-  },
-  caption: {
-    opacity: 0.4
-  }
-});
 
 export default Register;
