@@ -1,14 +1,9 @@
 import React from "react";
 import "./App.css";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
-import LoginPage from "./pages/LoginPage.js";
+import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
@@ -27,9 +22,9 @@ const theme = createMuiTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <Router>
+    <div className="App">
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/login" />} />
             <Route path="/login">
@@ -39,9 +34,9 @@ function App() {
               <DashboardPage />
             </Route>
           </Switch>
-        </Router>
-      </div>
-    </ThemeProvider>
+        </BrowserRouter>
+      </ThemeProvider>
+    </div>
   );
 }
 
