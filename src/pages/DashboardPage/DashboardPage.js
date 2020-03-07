@@ -5,9 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
 import "./DashboardPage.scss";
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   toolbarsOffset: { paddingLeft: "6.4rem", paddingTop: "4.4rem" }
-}));
+});
 
 function DashboardPage() {
   const classes = useStyles();
