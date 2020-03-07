@@ -68,6 +68,7 @@ function Register({ renderLogin }) {
           value={formData.username}
           name="username"
           required
+          fullWidth
         />
         <br />
         <TextField
@@ -77,6 +78,7 @@ function Register({ renderLogin }) {
           value={formData.email}
           name="email"
           required
+          fullWidth
         />
         <br />
         <TextField
@@ -86,16 +88,18 @@ function Register({ renderLogin }) {
           name="password"
           type="password"
           required
+          fullWidth
         />
         <br />
         <TextField
-          label="Confirm"
+          label="Confirm Password"
           onChange={handleFormChange}
           value={formData.confirmPassword}
           name="confirmPassword"
           type="password"
-          pattern={formData.password}
+          inputProps={{ pattern: formData.password }}
           required
+          fullWidth
         />
         <br />
         <Typography

@@ -7,7 +7,6 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
-import clsx from "clsx";
 import "./Login.scss";
 
 const useStyles = makeStyles({
@@ -57,7 +56,7 @@ function Login({ renderForgotPassword, renderRegister }) {
           variant="h4"
           component="h4"
           gutterBottom
-          className={clsx(classes.h1)}
+          className={classes.h1}
           align="center"
         >
           AWESOME DASH
@@ -79,6 +78,7 @@ function Login({ renderForgotPassword, renderRegister }) {
           name="username"
           value={userData.username}
           onChange={handleInputChange}
+          fullWidth
         />
         <br />
         <TextField
@@ -87,6 +87,7 @@ function Login({ renderForgotPassword, renderRegister }) {
           name="password"
           value={userData.password}
           onChange={handleInputChange}
+          fullWidth
         />
         <br />
         <Typography

@@ -44,7 +44,7 @@ function ForgotPassword({ renderLogin }) {
         </Typography>
       </div>
       <form className="form">
-        <TextField label="Email" />
+        <TextField label="Email" fullWidth />
         <br />
         <Typography
           variant="caption"

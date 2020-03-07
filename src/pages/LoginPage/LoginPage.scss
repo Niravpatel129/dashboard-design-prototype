@@ -25,13 +25,18 @@
       font-family: "Source Sans Pro";
     }
 
+    form {
+      width: 14rem;
+      text-align: center;
+    }
+
     .redirectLink {
       cursor: pointer;
     }
 
     .buttons {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
     }
   }
 
