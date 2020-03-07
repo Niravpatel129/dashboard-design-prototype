@@ -89,7 +89,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function NavBar() {
+export default function NavBar({ selected }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -163,7 +163,14 @@ export default function NavBar() {
             "Mail Marketing",
             "Chat Room"
           ].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem
+              button
+              key={text}
+              style={{
+                backgroundColor:
+                  selected.toLowerCase() === text.toLowerCase() ? "#3C3B54" : ""
+              }}
+            >
               <ListItemIcon>
                 {index % 2 === 0 ? (
                   <InboxIcon color="secondary" />

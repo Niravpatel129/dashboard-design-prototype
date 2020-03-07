@@ -54,7 +54,7 @@ function ForgotPassword({ renderLogin }) {
         ></Typography>
         <br />
         <div className="buttons">
-          <Button variant="contained" onClick={onSubmitRequest}>
+          <Button variant="contained" onClick={onSubmitRequest} color="primary">
             Submit Request
           </Button>
         </div>

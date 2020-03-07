@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 import "./DashboardPage.scss";
 const useStyles = makeStyles({
-  toolbarsOffset: { paddingLeft: "6.1rem", paddingTop: "4.4rem" }
+  toolbarsOffset: { paddingLeft: "6.3rem", paddingTop: "4.4rem" }
 });
 
 function DashboardPage() {
@@ -14,7 +14,7 @@ function DashboardPage() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar selected="dashboard" />
       <main className={clsx(classes.toolbarsOffset, "DashboardPage")}>
         <ChartsContent />
       </main>
