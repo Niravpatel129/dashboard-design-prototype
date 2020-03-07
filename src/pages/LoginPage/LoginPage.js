@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./LoginPage.scss";
-import Login from "../components/Login/Login";
-import Bg from "../assets/bg.png";
-import Register from "../components/Login/Register";
-import ForgotPassword from "../components/Login/ForgotPassword";
+import Login from "../../components/Login/Login";
+import Bg from "../../assets/bg.png";
+import Register from "../../components/Login/Register";
+import ForgotPassword from "../../components/Login/ForgotPassword";
 
 function LoginPage() {
   const [rendering, setRendering] = useState("login");
