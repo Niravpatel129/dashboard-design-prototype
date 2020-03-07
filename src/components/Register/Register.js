@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
-import "./Login.scss";
+import "./Register.scss";
 
 const useStyles = makeStyles({
   h1: {
@@ -40,23 +40,27 @@ function Register({ renderLogin }) {
   };
 
   return (
-    <div className="login">
-      <Typography
-        variant="h4"
-        component="h2"
-        gutterBottom
-        className={classes.h1}
-      >
-        REGISTER
-      </Typography>
-      <Typography
-        variant="caption"
-        display="block"
-        gutterBottom
-        className={classes.caption}
-      >
-        Please complete to create your account.
-      </Typography>
+    <div className="Register">
+      <div className="Title">
+        <Typography
+          variant="h4"
+          component="h2"
+          gutterBottom
+          className={classes.h1}
+          align="center"
+        >
+          REGISTER
+        </Typography>
+        <Typography
+          variant="caption"
+          display="block"
+          gutterBottom
+          className={classes.caption}
+          align="center"
+        >
+          Please complete to create your account.
+        </Typography>
+      </div>
       <form className="form" onSubmit={handleSignup}>
         <TextField
           label="Username"
@@ -85,7 +89,7 @@ function Register({ renderLogin }) {
         />
         <br />
         <TextField
-          label="Confirm Password"
+          label="Confirm"
           onChange={handleFormChange}
           value={formData.confirmPassword}
           name="confirmPassword"
@@ -93,7 +97,6 @@ function Register({ renderLogin }) {
           pattern={formData.password}
           required
         />
-        <br />
         <br />
         <Typography
           variant="caption"
@@ -105,6 +108,8 @@ function Register({ renderLogin }) {
             Already have an account? Login
           </p>
         </Typography>
+        <br />
+
         <Button variant="contained" type="submit" color="primary">
           Signup
         </Button>

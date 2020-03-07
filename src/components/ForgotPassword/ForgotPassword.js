@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
-import "./Login.scss";
+import "./ForgotPassword.scss";
 
 const useStyles = makeStyles({
   h1: {
@@ -24,23 +24,25 @@ function ForgotPassword({ renderLogin }) {
   };
 
   return (
-    <div className="login">
-      <Typography
-        variant="h4"
-        component="h2"
-        gutterBottom
-        className={classes.h1}
-      >
-        AWESOME DASH
-      </Typography>
-      <Typography
-        variant="caption"
-        display="block"
-        gutterBottom
-        className={classes.caption}
-      >
-        Enter your email and we send you a password reset link.
-      </Typography>
+    <div className="ForgotPassword">
+      <div className="Title">
+        <Typography
+          variant="h4"
+          component="h2"
+          gutterBottom
+          className={classes.h1}
+        >
+          AWESOME DASH
+        </Typography>
+        <Typography
+          variant="caption"
+          display="block"
+          gutterBottom
+          className={classes.caption}
+        >
+          Enter your email and we send you a password reset link.
+        </Typography>
+      </div>
       <form className="form">
         <TextField label="Email" />
         <br />

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./LoginPage.scss";
 import Login from "../../components/Login/Login";
 import Bg from "../../assets/bg.png";
-import Register from "../../components/Login/Register";
-import ForgotPassword from "../../components/Login/ForgotPassword";
+import Register from "../../components/Register/Register";
+import ForgotPassword from "../../components/ForgotPassword/ForgotPassword";
 
 function LoginPage() {
   const [rendering, setRendering] = useState("login");
@@ -25,16 +25,18 @@ function LoginPage() {
       <div className="bg-image">
         <img src={Bg} alt={Bg}></img>
       </div>
-      {rendering === "login" && (
-        <Login
-          renderForgotPassword={renderForgotPassword}
-          renderRegister={renderRegister}
-        />
-      )}
-      {rendering === "register" && <Register renderLogin={renderLogin} />}
-      {rendering === "forgotPassword" && (
-        <ForgotPassword renderLogin={renderLogin} />
-      )}
+      <div className="LoginSection">
+        {rendering === "login" && (
+          <Login
+            renderForgotPassword={renderForgotPassword}
+            renderRegister={renderRegister}
+          />
+        )}
+        {rendering === "register" && <Register renderLogin={renderLogin} />}
+        {rendering === "forgotPassword" && (
+          <ForgotPassword renderLogin={renderLogin} />
+        )}
+      </div>
     </div>
   );
 }

@@ -22,6 +22,7 @@ const useStyles = makeStyles({
 function Login({ renderForgotPassword, renderRegister }) {
   const classes = useStyles();
   const history = useHistory();
+
   const [userData, setUserData] = useState({
     username: "",
     password: ""
@@ -34,6 +35,7 @@ function Login({ renderForgotPassword, renderRegister }) {
   };
 
   const handleLogin = () => {
+    // Only Allow login if user and password matches.
     if (
       users.find(user => {
         return (
@@ -43,27 +45,33 @@ function Login({ renderForgotPassword, renderRegister }) {
       })
     ) {
       history.push("/dashboard");
+    } else {
+      alert("Incorrect User / PW");
     }
   };
 
   return (
-    <div className="login">
-      <Typography
-        variant="h4"
-        component="h2"
-        gutterBottom
-        className={clsx(classes.h1, "loginTitle")}
-      >
-        AWESOME DASH
-      </Typography>
-      <Typography
-        variant="caption"
-        display="block"
-        gutterBottom
-        className={classes.caption}
-      >
-        Welcome back! Please login to your account.
-      </Typography>
+    <div className="Login">
+      <div className="Title">
+        <Typography
+          variant="h4"
+          component="h4"
+          gutterBottom
+          className={clsx(classes.h1)}
+          align="center"
+        >
+          AWESOME DASH
+        </Typography>
+        <Typography
+          variant="caption"
+          display="block"
+          gutterBottom
+          className={classes.caption}
+          align="center"
+        >
+          Welcome back! Please login to your account.
+        </Typography>
+      </div>
       <form className="form">
         <TextField
           label="Username"
@@ -81,7 +89,6 @@ function Login({ renderForgotPassword, renderRegister }) {
           onChange={handleInputChange}
         />
         <br />
-        <br />
         <Typography
           variant="caption"
           display="block"
@@ -92,6 +99,7 @@ function Login({ renderForgotPassword, renderRegister }) {
             Forgot Password
           </p>
         </Typography>
+        <br />
         <div className="buttons">
           <Button variant="contained" onClick={handleLogin} color="primary">
             Login
