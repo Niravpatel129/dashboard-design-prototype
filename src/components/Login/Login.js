@@ -91,7 +91,7 @@ function Login({ renderForgotPassword, renderRegister }) {
           </p>
         </Typography>
         <div className="buttons">
-          <Button variant="contained" onClick={handleLogin}>
+          <Button variant="contained" onClick={handleLogin} color="primary">
             Login
           </Button>
           <Button variant="outlined" onClick={renderRegister}>

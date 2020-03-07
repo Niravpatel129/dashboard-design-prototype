@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.scss";
 import TextField from "@material-ui/core/TextField";
-import { Typography } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useDispatch } from "react-redux";
 
@@ -102,7 +102,9 @@ function Register({ renderLogin }) {
             Already have an account? Login
           </p>
         </Typography>
-        <TextField type="submit" />
+        <Button variant="contained" type="submit" color="primary">
+          Signup
+        </Button>
       </form>
     </div>
   );
