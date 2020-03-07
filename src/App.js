@@ -1,6 +1,4 @@
 import React from "react";
-import "./App.css";
-
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import LoginPage from "./pages/LoginPage/LoginPage";
@@ -8,7 +6,9 @@ import DashboardPage from "./pages/DashboardPage/DashboardPage";
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-// Simple theme thats present across the application
+import "./App.css";
+
+// default theme material ui
 const theme = createMuiTheme({
   palette: {
     primary: {
