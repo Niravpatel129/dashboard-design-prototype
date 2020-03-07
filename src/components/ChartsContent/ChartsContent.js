@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
-
 import Highcharts from "highcharts";
+import ChartsData from "./ChartsData";
 
 import Grid from "@material-ui/core/Grid";
 
 import "./ChartsContent.scss";
-
-import ChartsData from "./ChartsData";
 
 function ChartsContent() {
   useEffect(() => {

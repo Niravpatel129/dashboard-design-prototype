@@ -16,7 +16,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import { Badge } from "@material-ui/core";
+import Badge from "@material-ui/core/Badge";
 
 import "./NavBar.scss";
 import { useStyles } from "./NavBar-styles";
@@ -48,13 +48,13 @@ function NavBar() {
             <div className="inside">
               <IconButton
                 aria-label="show 11 new notifications"
-                color="primary"
+                color="secondary"
               >
                 <Badge badgeContent={2}>
                   <NotificationsIcon />
                 </Badge>
               </IconButton>
-              <span className="name" color="primary">
+              <span style={{ opacity: 0.87 }} className="name">
                 John Doe
               </span>
 
@@ -62,7 +62,7 @@ function NavBar() {
                 aria-label="account of current user"
                 aria-controls="primary-search-account-menu"
                 aria-haspopup="true"
-                color="primary"
+                color="secondary"
               >
                 <AccountCircle />
               </IconButton>

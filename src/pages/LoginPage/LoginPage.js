@@ -6,7 +6,7 @@ import Register from "../../components/Login/Register";
 import ForgotPassword from "../../components/Login/ForgotPassword";
 
 function LoginPage() {
-  const [rendering, setRendering] = useState("register");
+  const [rendering, setRendering] = useState("login");
 
   const renderForgotPassword = () => {
     setRendering("forgotPassword");

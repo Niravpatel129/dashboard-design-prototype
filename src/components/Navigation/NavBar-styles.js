@@ -1,10 +1,13 @@
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 
 const drawerWidth = 240;
 
 export const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
+  },
+  title: {
+    display: "inline-block"
   },
   selectedItem: { backgroundColor: "#3B3A53" },
   drawerTheme: {

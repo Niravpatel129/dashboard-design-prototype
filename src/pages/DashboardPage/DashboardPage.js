@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navigation/NavBar";
 import ChartsContent from "../../components/ChartsContent/ChartsContent";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 import clsx from "clsx";
 
 import "./DashboardPage.scss";
