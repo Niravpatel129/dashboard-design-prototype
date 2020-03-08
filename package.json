@@ -1,5 +1,6 @@
 {
   "name": "high-charts-dashboard",
+  "author": "Nirav Patel",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -14,10 +15,8 @@
     "axios": "^0.19.2",
     "clsx": "^1.1.0",
     "highcharts": "^8.0.2",
-    "highcharts-react-official": "^3.0.0",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
-    "react-div-100vh": "^0.3.8",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",

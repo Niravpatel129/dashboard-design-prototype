@@ -28,11 +28,11 @@ function ForgotPassword({ renderLogin }) {
       <div className="Title">
         <Typography
           variant="h4"
-          component="h2"
+          component="h4"
           gutterBottom
           className={classes.h1}
         >
-          AWESOME DASH
+          Forgot Password
         </Typography>
         <Typography
           variant="caption"

@@ -59,7 +59,7 @@ function Login({ renderForgotPassword, renderRegister }) {
           className={classes.h1}
           align="center"
         >
-          AWESOME DASH
+          Awesome Dash
         </Typography>
         <Typography
           variant="caption"

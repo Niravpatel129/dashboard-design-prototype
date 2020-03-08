@@ -44,12 +44,12 @@ function Register({ renderLogin }) {
       <div className="Title">
         <Typography
           variant="h4"
-          component="h2"
+          component="h4"
           gutterBottom
           className={classes.h1}
           align="center"
         >
-          REGISTER
+          Register
         </Typography>
         <Typography
           variant="caption"
