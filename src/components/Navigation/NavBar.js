@@ -67,7 +67,7 @@ export default function NavBar({ selected }) {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            <span style={{ color: "black" }}>John Doe</span>
+            <span style={{ color: "black", cursor: "pointer" }}>John Doe</span>
             <IconButton edge="end" color="inherit">
               <AccountCircle />
             </IconButton>
