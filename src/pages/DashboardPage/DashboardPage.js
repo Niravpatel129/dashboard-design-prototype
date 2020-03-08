@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 import "./DashboardPage.scss";
 const useStyles = makeStyles({
-  toolbarsOffset: { paddingLeft: "6.3rem", paddingTop: "4.4rem" }
+  toolbarsOffset: { paddingLeft: "5.9rem", paddingTop: "4.4rem" }
 });
 
 function DashboardPage() {
