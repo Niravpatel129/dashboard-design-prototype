@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dashboard App with register and login function built into the client.
+![demo](./public/demo/demo.gif)
 
 ## Available Scripts
 
