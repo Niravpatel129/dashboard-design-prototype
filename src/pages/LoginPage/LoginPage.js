@@ -36,6 +36,7 @@ function LoginPage() {
         {rendering === "forgotPassword" && (
           <ForgotPassword renderLogin={renderLogin} />
         )}
+        <p className="termsCapton">Term of use. Privacy policy</p>
       </div>
     </div>
   );

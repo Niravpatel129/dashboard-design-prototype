@@ -19,6 +19,15 @@
     flex: 2;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+    .termsCapton {
+      font-size: 0.65rem;
+      color: #43425d;
+      font-family: "Source Sans Pro";
+      position: absolute;
+      bottom: 1.4rem;
+    }
 
     .Title h4 {
       width: 100%;
@@ -31,6 +40,9 @@
     form {
       width: 14rem;
       text-align: center;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
     }
 
     .redirectLink {
@@ -53,8 +65,8 @@
       background: rgba(255, 255, 255, 0.6);
       border-radius: 1.5rem 1.5rem 0 0;
       bottom: 0;
-      padding-top: 2rem;
-      padding-bottom: 2.7rem;
+      padding-top: 4rem;
+      padding-bottom: 5.7rem;
 
       .Title {
         color: white;
