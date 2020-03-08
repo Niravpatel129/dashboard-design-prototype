@@ -9,9 +9,6 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import "./Register.scss";
 
 const useStyles = makeStyles({
-  h1: {
-    letterSpacing: "5px"
-  },
   caption: {
     opacity: 0.4
   }

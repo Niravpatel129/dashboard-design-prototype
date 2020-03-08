@@ -32,17 +32,19 @@
     .Title h4 {
       width: 100%;
       font-weight: bold;
-      font-size: 35px;
+      font-size: 2rem;
       font-family: "Source Sans Pro";
+      letter-spacing: 0.23rem;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     form {
-      width: 14rem;
-      text-align: center;
-      margin-top: 1.5rem;
       display: flex;
       flex-direction: column;
+      text-align: center;
+      width: 14rem;
+      margin-top: 1.5rem;
     }
 
     .redirectLink {
@@ -61,17 +63,16 @@
       position: absolute;
       background-color: white;
       width: 100%;
-      height: 38%;
       background: rgba(255, 255, 255, 0.6);
       border-radius: 1.5rem 1.5rem 0 0;
-      bottom: 0;
+      bottom: 0px;
       padding-top: 4rem;
-      padding-bottom: 5.7rem;
+      padding-bottom: 7.7rem;
 
       .Title {
         color: white;
         position: absolute;
-        top: -8rem;
+        top: -6.9rem;
       }
     }
   }

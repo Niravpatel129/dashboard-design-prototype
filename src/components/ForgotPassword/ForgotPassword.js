@@ -8,9 +8,6 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import "./ForgotPassword.scss";
 
 const useStyles = makeStyles({
-  h1: {
-    letterSpacing: "5px"
-  },
   caption: {
     opacity: 0.4
   }
@@ -31,8 +28,9 @@ function ForgotPassword({ renderLogin }) {
           component="h4"
           gutterBottom
           className={classes.h1}
+          align="center"
         >
-          Forgot Password
+          Password Reset
         </Typography>
         <Typography
           variant="caption"
