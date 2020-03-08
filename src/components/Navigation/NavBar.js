@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -20,12 +21,24 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import "./NavBar.scss";
 import useStyles from "./NavBar-styles";
 
+// Holding the possible routes of the sidebar
+const drawerRoutes = [
+  "Home",
+  "Dashboard",
+  "About Me",
+  "Products",
+  "Invoices",
+  "Mail Marketing",
+  "Chat Room"
+];
+
 export default function NavBar({ selected }) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+
+  const [drawerView, setDrawerView] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    setOpen(!open);
+    setDrawerView(!drawerView);
   };
 
   return (
@@ -35,7 +48,7 @@ export default function NavBar({ selected }) {
         color="default"
         position="fixed"
         className={clsx(classes.appBar, {
-          [classes.appBarShift]: open
+          [classes.appBarShift]: drawerView
         })}
         elevation={2}
       >
@@ -55,13 +68,7 @@ export default function NavBar({ selected }) {
               </Badge>
             </IconButton>
             <span style={{ color: "black" }}>John Doe</span>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls="primary-search-account-menu"
-              aria-haspopup="true"
-              color="inherit"
-            >
+            <IconButton edge="end" color="inherit">
               <AccountCircle />
             </IconButton>
           </div>
@@ -70,13 +77,13 @@ export default function NavBar({ selected }) {
       <Drawer
         variant="permanent"
         className={clsx(classes.drawer, {
-          [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open
+          [classes.drawerOpen]: drawerView,
+          [classes.drawerClose]: !drawerView
         })}
         classes={{
           paper: clsx(classes.drawerTheme, {
-            [classes.drawerOpen]: open,
-            [classes.drawerClose]: !open
+            [classes.drawerOpen]: drawerView,
+            [classes.drawerClose]: !drawerView
           })
         }}
       >
@@ -86,15 +93,7 @@ export default function NavBar({ selected }) {
           </IconButton>
         </div>
         <List>
-          {[
-            "Home",
-            "Dashboard",
-            "About Me",
-            "Products",
-            "Invoices",
-            "Mail Marketing",
-            "Chat Room"
-          ].map((text, index) => (
+          {drawerRoutes.map((text, index) => (
             <ListItem
               button
               key={text}

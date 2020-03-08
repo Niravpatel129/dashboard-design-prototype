@@ -8,6 +8,10 @@ import "./ChartsContent.scss";
 
 function ChartsContent() {
   useEffect(() => {
+    Highcharts.setOptions({
+      colors: ["#B7EFFF", "#A4A1FB"]
+    });
+
     Highcharts.chart("chart1", ChartsData.dataSet1);
     Highcharts.chart("chart2", ChartsData.dataSet2);
     Highcharts.chart("chart3", ChartsData.dataSet3);
