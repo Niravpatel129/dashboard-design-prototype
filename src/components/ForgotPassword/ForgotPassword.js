@@ -39,6 +39,7 @@ function ForgotPassword({ renderLogin }) {
           display="block"
           gutterBottom
           className={classes.caption}
+          align="center"
         >
           Enter your email and we send you a password reset link.
         </Typography>
