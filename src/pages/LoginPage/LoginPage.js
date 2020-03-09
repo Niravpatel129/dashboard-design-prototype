@@ -4,7 +4,7 @@ import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
 import ForgotPassword from "../../components/ForgotPassword/ForgotPassword";
 
-import Bg from "../../assets/bg.png";
+import Bg from "../../assets/images/bg.png";
 import "./LoginPage.scss";
 
 function LoginPage() {
