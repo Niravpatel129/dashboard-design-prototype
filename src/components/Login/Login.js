@@ -45,7 +45,7 @@ function Login({ changeRender }) {
   };
 
   return (
-    <div className="Login">
+    <section className="Login">
       <div className="Title">
         <Typography variant="h4" component="h4" align="center">
           Awesome Dash
@@ -101,7 +101,7 @@ function Login({ changeRender }) {
           </Button>
         </div>
       </form>
-    </div>
+    </section>
   );
 }
 

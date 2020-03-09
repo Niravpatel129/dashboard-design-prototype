@@ -25,7 +25,7 @@ function ChartsContent() {
   }, []);
 
   return (
-    <div className="ChartsContent">
+    <section className="ChartsContent">
       <h2>Overview</h2>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={4}>
@@ -50,7 +50,7 @@ function ChartsContent() {
           <div id="chart7" />
         </Grid>
       </Grid>
-    </div>
+    </section>
   );
 }
 

@@ -24,7 +24,7 @@ function LoginPage() {
   };
 
   return (
-    <div className="loginPage">
+    <section className="loginPage">
       <div className="backgroundImage">
         <img src={Bg} alt="Background" />
       </div>
@@ -32,7 +32,7 @@ function LoginPage() {
         {renderSelected()}
         <p className="termsCapton">Term of use. Privacy policy</p>
       </div>
-    </div>
+    </section>
   );
 }
 

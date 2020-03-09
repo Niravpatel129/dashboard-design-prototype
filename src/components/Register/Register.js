@@ -37,7 +37,7 @@ function Register({ changeRender }) {
   };
 
   return (
-    <div className="Register">
+    <section className="Register">
       <div className="Title">
         <Typography variant="h4" component="h4" align="center">
           Register
@@ -108,7 +108,7 @@ function Register({ changeRender }) {
           Signup
         </Button>
       </form>
-    </div>
+    </section>
   );
 }
 

@@ -15,12 +15,12 @@ function DashboardPage() {
   const classes = useStyles();
 
   return (
-    <div>
+    <section>
       <Navbar selected="dashboard" />
       <main className={clsx(classes.toolbarsOffset, "DashboardPage")}>
         <ChartsContent />
       </main>
-    </div>
+    </section>
   );
 }
 

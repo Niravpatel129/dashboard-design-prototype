@@ -42,7 +42,7 @@ export default function NavBar({ selected }) {
   };
 
   return (
-    <div className={classes.root}>
+    <nav className={classes.root}>
       <CssBaseline />
       <AppBar
         color="default"
@@ -114,6 +114,6 @@ export default function NavBar({ selected }) {
           ))}
         </List>
       </Drawer>
-    </div>
+    </nav>
   );
 }

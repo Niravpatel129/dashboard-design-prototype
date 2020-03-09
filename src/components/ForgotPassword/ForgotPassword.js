@@ -21,7 +21,7 @@ function ForgotPassword({ changeRender }) {
   };
 
   return (
-    <div className="ForgotPassword">
+    <section className="ForgotPassword">
       <div className="Title">
         <Typography variant="h4" component="h4" align="center">
           Password Reset
@@ -51,7 +51,7 @@ function ForgotPassword({ changeRender }) {
           </Button>
         </div>
       </form>
-    </div>
+    </section>
   );
 }
 
