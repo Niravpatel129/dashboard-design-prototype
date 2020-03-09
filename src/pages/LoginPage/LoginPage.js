@@ -29,8 +29,8 @@ function LoginPage() {
 
   return (
     <div className="loginPage">
-      <div className="bg-image">
-        <img src={Bg} alt={Bg}></img>
+      <div className="backgroundImage">
+        <img src={Bg} alt="Background" />
       </div>
       <div className="LoginSection">
         {renderSelected()}
