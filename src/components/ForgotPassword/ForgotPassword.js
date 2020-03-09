@@ -23,19 +23,12 @@ function ForgotPassword({ changeRender }) {
   return (
     <div className="ForgotPassword">
       <div className="Title">
-        <Typography
-          variant="h4"
-          component="h4"
-          gutterBottom
-          className={classes.h1}
-          align="center"
-        >
+        <Typography variant="h4" component="h4" align="center">
           Password Reset
         </Typography>
         <Typography
           variant="caption"
           display="block"
-          gutterBottom
           className={classes.caption}
           align="center"
         >

@@ -18,50 +18,41 @@ const useStyles = makeStyles({
 function Login({ changeRender }) {
   const classes = useStyles();
   const history = useHistory();
+  const users = useSelector(state => state.loginsReducer);
 
   const [userData, setUserData] = useState({
     username: "",
     password: ""
   });
 
-  const users = useSelector(state => state.loginsReducer);
-
   const handleInputChange = e => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
   const handleLogin = () => {
-    // Only Allow login if user and password matches.
-    if (
-      users.find(user => {
-        return (
-          user.username === userData.username &&
-          user.password === userData.password
-        );
-      })
-    ) {
+    const isUserAccountValid = users.find(user => {
+      return (
+        user.username === userData.username &&
+        user.password === userData.password
+      );
+    });
+
+    if (isUserAccountValid) {
       history.push("/dashboard");
     } else {
-      alert("Incorrect User / PW");
+      alert("Incorrect user and password");
     }
   };
 
   return (
     <div className="Login">
       <div className="Title">
-        <Typography
-          variant="h4"
-          component="h4"
-          gutterBottom
-          className={classes.h1}
-          align="center"
-        >
+        <Typography variant="h4" component="h4" align="center">
           Awesome Dash
         </Typography>
         <Typography
           variant="caption"
           display="block"
-          gutterBottom
           className={classes.caption}
           align="center"
         >

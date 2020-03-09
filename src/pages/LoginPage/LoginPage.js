@@ -8,22 +8,18 @@ import Bg from "../../assets/images/bg.png";
 import "./LoginPage.scss";
 
 function LoginPage() {
-  const [rendering, setRendering] = useState();
-
-  const changeRender = page => {
-    setRendering(page);
-  };
+  const [pageModule, setPageModule] = useState();
 
   const renderSelected = () => {
-    switch (rendering) {
+    switch (pageModule) {
       case "login":
-        return <Login changeRender={changeRender} />;
+        return <Login changeRender={setPageModule} />;
       case "register":
-        return <Register changeRender={changeRender} />;
+        return <Register changeRender={setPageModule} />;
       case "forgotPassword":
-        return <ForgotPassword changeRender={changeRender} />;
+        return <ForgotPassword changeRender={setPageModule} />;
       default:
-        return <Login changeRender={changeRender} />;
+        return <Login changeRender={setPageModule} />;
     }
   };
 

@@ -16,6 +16,7 @@ const useStyles = makeStyles({
 
 function Register({ changeRender }) {
   const classes = useStyles();
+  const dispatch = useDispatch(null);
 
   const [formData, setFormData] = useState({
     username: "",
@@ -24,14 +25,13 @@ function Register({ changeRender }) {
     confirmPassword: ""
   });
 
-  const dispatch = useDispatch(null);
-
   const handleFormChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSignup = e => {
     e.preventDefault();
+
     dispatch({ type: "REGISTER_USER", payload: formData });
     changeRender("login");
   };
@@ -39,19 +39,12 @@ function Register({ changeRender }) {
   return (
     <div className="Register">
       <div className="Title">
-        <Typography
-          variant="h4"
-          component="h4"
-          gutterBottom
-          className={classes.h1}
-          align="center"
-        >
+        <Typography variant="h4" component="h4" align="center">
           Register
         </Typography>
         <Typography
           variant="caption"
           display="block"
-          gutterBottom
           className={classes.caption}
           align="center"
         >
