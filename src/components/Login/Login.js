@@ -75,6 +75,7 @@ function Login({ changeRender }) {
           name="password"
           value={userData.password}
           onChange={handleInputChange}
+          autoComplete="off"
           fullWidth
         />
         <br />

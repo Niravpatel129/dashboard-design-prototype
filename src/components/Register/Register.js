@@ -77,6 +77,7 @@ function Register({ changeRender }) {
           value={formData.password}
           name="password"
           type="password"
+          autoComplete="off"
           required
           fullWidth
         />
@@ -89,6 +90,7 @@ function Register({ changeRender }) {
           type="password"
           inputProps={{ pattern: formData.password }}
           required
+          autoComplete="off"
           fullWidth
         />
         <br />
