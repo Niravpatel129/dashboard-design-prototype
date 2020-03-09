@@ -1,23 +1,30 @@
 import React, { useState } from "react";
-import "./LoginPage.scss";
+
 import Login from "../../components/Login/Login";
-import Bg from "../../assets/bg.png";
 import Register from "../../components/Register/Register";
 import ForgotPassword from "../../components/ForgotPassword/ForgotPassword";
 
+import Bg from "../../assets/bg.png";
+import "./LoginPage.scss";
+
 function LoginPage() {
-  const [rendering, setRendering] = useState("login");
+  const [rendering, setRendering] = useState();
 
-  const renderForgotPassword = () => {
-    setRendering("forgotPassword");
+  const changeRender = page => {
+    setRendering(page);
   };
 
-  const renderRegister = () => {
-    setRendering("register");
-  };
-
-  const renderLogin = () => {
-    setRendering("login");
+  const renderSelected = () => {
+    switch (rendering) {
+      case "login":
+        return <Login changeRender={changeRender} />;
+      case "register":
+        return <Register changeRender={changeRender} />;
+      case "forgotPassword":
+        return <ForgotPassword changeRender={changeRender} />;
+      default:
+        return <Login changeRender={changeRender} />;
+    }
   };
 
   return (
@@ -26,16 +33,7 @@ function LoginPage() {
         <img src={Bg} alt={Bg}></img>
       </div>
       <div className="LoginSection">
-        {rendering === "login" && (
-          <Login
-            renderForgotPassword={renderForgotPassword}
-            renderRegister={renderRegister}
-          />
-        )}
-        {rendering === "register" && <Register renderLogin={renderLogin} />}
-        {rendering === "forgotPassword" && (
-          <ForgotPassword renderLogin={renderLogin} />
-        )}
+        {renderSelected()}
         <p className="termsCapton">Term of use. Privacy policy</p>
       </div>
     </div>

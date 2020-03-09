@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   }
 });
 
-function Register({ renderLogin }) {
+function Register({ changeRender }) {
   const classes = useStyles();
 
   const [formData, setFormData] = useState({
@@ -33,7 +33,7 @@ function Register({ renderLogin }) {
   const handleSignup = e => {
     e.preventDefault();
     dispatch({ type: "REGISTER_USER", payload: formData });
-    renderLogin();
+    changeRender("login");
   };
 
   return (
@@ -105,7 +105,7 @@ function Register({ renderLogin }) {
           gutterBottom
           className={classes.caption}
         >
-          <p className="redirectLink" onClick={renderLogin}>
+          <p className="redirectLink" onClick={() => changeRender("login")}>
             Already have an account? Login
           </p>
         </Typography>

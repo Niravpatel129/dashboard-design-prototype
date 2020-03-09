@@ -13,11 +13,11 @@ const useStyles = makeStyles({
   }
 });
 
-function ForgotPassword({ renderLogin }) {
+function ForgotPassword({ changeRender }) {
   const classes = useStyles();
 
   const onSubmitRequest = () => {
-    renderLogin();
+    changeRender("login");
   };
 
   return (

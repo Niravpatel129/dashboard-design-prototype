@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   }
 });
 
-function Login({ renderForgotPassword, renderRegister }) {
+function Login({ changeRender }) {
   const classes = useStyles();
   const history = useHistory();
 
@@ -93,7 +93,10 @@ function Login({ renderForgotPassword, renderRegister }) {
           gutterBottom
           className={classes.caption}
         >
-          <p className="redirectLink" onClick={renderForgotPassword}>
+          <p
+            className="redirectLink"
+            onClick={() => changeRender("forgotPassword")}
+          >
             Forgot Password
           </p>
         </Typography>
@@ -102,7 +105,7 @@ function Login({ renderForgotPassword, renderRegister }) {
           <Button variant="contained" onClick={handleLogin} color="primary">
             Login
           </Button>
-          <Button variant="outlined" onClick={renderRegister}>
+          <Button variant="outlined" onClick={() => changeRender("register")}>
             Signup
           </Button>
         </div>
