@@ -19,6 +19,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 
 import "./NavBar.scss";
 import useStyles from "./NavBar-styles";
+import { useDispatch } from "react-redux";
 
 // Holding the possible routes of the sidebar
 const drawerRoutes = [
@@ -54,11 +55,18 @@ const drawerRoutes = [
 
 export default function NavBar({ selected }) {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   const [drawerView, setDrawerView] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setDrawerView(!drawerView);
+
+    if (!drawerView) {
+      dispatch({ type: "DRAWER_OPEN" });
+    } else {
+      dispatch({ type: "DRAWER_CLOSE" });
+    }
   };
 
   return (
