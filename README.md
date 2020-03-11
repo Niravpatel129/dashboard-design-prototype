@@ -1,5 +1,6 @@
 Dashboard App with register and login function built into the client.
-![demo](./public/demo/demo.gif)
+
+[![demo](./public/demo/demo.gif)](https://keen-thompson-8ff22f.netlify.com/dashboard)
 
 ## Available Scripts
 
