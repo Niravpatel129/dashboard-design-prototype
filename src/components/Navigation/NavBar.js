@@ -121,7 +121,7 @@ export default function NavBar({ selected }) {
           </IconButton>
         </div>
         <List>
-          {drawerRoutes.map((item, index) => (
+          {drawerRoutes.map(item => (
             <ListItem
               button
               key={item.title}
