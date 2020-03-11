@@ -26,8 +26,8 @@ function Register({ changeRender }) {
   });
 
   const handleFormChange = e => {
-    `  const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });`;
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSignup = e => {
