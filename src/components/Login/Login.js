@@ -31,6 +31,7 @@ function Login({ changeRender }) {
   };
 
   const handleLogin = () => {
+    // simple check to see if user matches the user/pw saved
     const isUserAccountValid = users.find(user => {
       return (
         user.username === userData.username &&
