@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import clsx from "clsx";
 
 import Drawer from "@material-ui/core/Drawer";
@@ -19,7 +21,6 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 
 import "./NavBar.scss";
 import useStyles from "./NavBar-styles";
-import { useDispatch } from "react-redux";
 
 // Holding the possible routes of the sidebar
 const drawerRoutes = [
@@ -55,6 +56,7 @@ const drawerRoutes = [
 
 export default function NavBar({ selected }) {
   const classes = useStyles();
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const [drawerView, setDrawerView] = React.useState(false);
@@ -142,6 +144,11 @@ export default function NavBar({ selected }) {
                   selected.toLowerCase() === item.title.toLowerCase()
                     ? "0.1rem solid #A3A0FB"
                     : ""
+              }}
+              onClick={() => {
+                if (item.title.toLowerCase() === "home") {
+                  history.push("/");
+                }
               }}
             >
               <Icon
