@@ -9,10 +9,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import Icon from "@material-ui/core/Icon";
 
 import Badge from "@material-ui/core/Badge";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -23,13 +22,34 @@ import useStyles from "./NavBar-styles";
 
 // Holding the possible routes of the sidebar
 const drawerRoutes = [
-  "Home",
-  "Dashboard",
-  "About Me",
-  "Products",
-  "Invoices",
-  "Mail Marketing",
-  "Chat Room"
+  {
+    title: "Home",
+    icon: "home"
+  },
+  {
+    title: "Dashboard",
+    icon: "signal_cellular_alt"
+  },
+  {
+    title: "About me",
+    icon: "perm_identity"
+  },
+  {
+    title: "Products",
+    icon: "local_movies"
+  },
+  {
+    title: "Invoces",
+    icon: "bookmarks"
+  },
+  {
+    title: "Mail Marketing",
+    icon: "mail"
+  },
+  {
+    title: "Chat Room",
+    icon: "chat"
+  }
 ];
 
 export default function NavBar({ selected }) {
@@ -87,29 +107,53 @@ export default function NavBar({ selected }) {
           })
         }}
       >
-        <div className={clsx(classes.toolbar, classes.paperTheme)}>
+        <div
+          className={clsx(classes.toolbar, classes.paperTheme)}
+          style={{ justifyContent: "center" }}
+        >
+          {drawerView && (
+            <h3 style={{ color: "white", marginLeft: "0.9rem", flex: 1 }}>
+              AWESOME DASH
+            </h3>
+          )}
           <IconButton onClick={handleDrawerToggle}>
             <MenuIcon style={{ color: "white" }} />
           </IconButton>
         </div>
         <List>
-          {drawerRoutes.map((text, index) => (
+          {drawerRoutes.map((item, index) => (
             <ListItem
               button
-              key={text}
+              key={item.title}
               style={{
                 backgroundColor:
-                  selected.toLowerCase() === text.toLowerCase() ? "#3C3B54" : ""
+                  selected.toLowerCase() === item.title.toLowerCase()
+                    ? "#3C3B54"
+                    : "",
+                borderLeft:
+                  selected.toLowerCase() === item.title.toLowerCase()
+                    ? "0.1rem solid #A3A0FB"
+                    : ""
               }}
             >
-              <ListItemIcon>
-                {index % 2 === 0 ? (
-                  <InboxIcon color="secondary" />
-                ) : (
-                  <MailIcon color="secondary" />
-                )}
-              </ListItemIcon>
-              <ListItemText primary={text} style={{ color: "white" }} />
+              <Icon
+                style={{
+                  color:
+                    selected.toLowerCase() === item.title.toLowerCase()
+                      ? "#9290E2"
+                      : "#A5A4BF",
+                  width: "2.6rem"
+                }}
+              >
+                {item.icon}
+              </Icon>
+              <ListItemText
+                variant="h7"
+                primary={item.title}
+                style={{
+                  color: "white"
+                }}
+              />
             </ListItem>
           ))}
         </List>

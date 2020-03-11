@@ -59,9 +59,6 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(0, 1),
     ...theme.mixins.toolbar
   },
-  paperTheme: {
-    width: "46px"
-  },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3)
