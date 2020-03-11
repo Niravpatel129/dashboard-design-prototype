@@ -26,7 +26,8 @@ function Login({ changeRender }) {
   });
 
   const handleInputChange = e => {
-    setUserData({ ...userData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setUserData({ ...userData, [name]: value });
   };
 
   const handleLogin = () => {
