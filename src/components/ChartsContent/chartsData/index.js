@@ -3,9 +3,17 @@ import axios from "axios";
 const getChart4Data = async () => {
   let res = await axios.get("https://www.mercadobitcoin.net/api/BTC/trades");
 
-  let newData = res.data.map(i => {
-    return i.price;
-  });
+  let buyPrice = res.data
+    .filter(each => each.type === "buy")
+    .reduce((arr, each) => {
+      return [...arr, [each.date, each.price]];
+    }, []);
+
+  let sellPrice = res.data
+    .filter(each => each.type === "sell")
+    .reduce((arr, each) => {
+      return [...arr, [each.date, each.price]];
+    }, []);
 
   return {
     title: {
@@ -20,8 +28,12 @@ const getChart4Data = async () => {
 
     series: [
       {
-        name: "Btc Price",
-        data: newData
+        name: "Btc Buy Price",
+        data: buyPrice
+      },
+      {
+        name: "Btc Sell Price",
+        data: sellPrice
       }
     ],
 
