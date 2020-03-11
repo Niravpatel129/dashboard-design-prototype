@@ -14,7 +14,7 @@ const getChart4Data = async () => {
 
     yAxis: {
       title: {
-        text: "Number of Employees"
+        text: "Number of Trade Price"
       }
     },
 
