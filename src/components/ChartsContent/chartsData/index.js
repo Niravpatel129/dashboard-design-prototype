@@ -21,7 +21,7 @@ function dateConverter(UNIX_timestamp) {
   const month = months[a.getMonth()];
   const date = a.getDate();
 
-  const time = date + " " + month + " " + year;
+  const time = date + " " + month;
   return time;
 }
 
