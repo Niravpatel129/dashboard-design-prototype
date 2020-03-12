@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import clsx from "clsx";
 
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -21,6 +22,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 
 import "./Navigation.scss";
 import useStyles from "./Navigation-styles";
+import Menu from "./SubComponents/Menu";
 
 // Holding the possible routes of the sidebar
 const drawerRoutes = [
@@ -55,6 +57,7 @@ const drawerRoutes = [
 ];
 
 export default function Navigation({ selected }) {
+  const isDesktop = useMediaQuery("(min-width:600px)");
   const classes = useStyles();
   const history = useHistory();
   const dispatch = useDispatch();
@@ -95,22 +98,55 @@ export default function Navigation({ selected }) {
             {!drawerView && <span className="title">AWESOME DASH</span>}
           </h3>
 
-          <div style={{ color: "#BCBCCB" }}>
-            <IconButton color="inherit">
-              <Badge color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton color="inherit">
-              <Badge color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <span style={{ color: "black", cursor: "pointer" }}>John Doe</span>
-            <IconButton edge="end" color="inherit">
-              <AccountCircle />
-            </IconButton>
-          </div>
+          {/* Mobile  */}
+          {!isDesktop ? (
+            <Menu>
+              <div
+                style={{
+                  color: "#BCBCCB",
+                  display: "flex",
+                  flexDirection: "column"
+                }}
+              >
+                <IconButton color="inherit">
+                  <Badge color="secondary">
+                    <MailIcon />
+                  </Badge>
+                </IconButton>
+                <IconButton color="inherit">
+                  <Badge color="secondary">
+                    <NotificationsIcon />
+                  </Badge>
+                </IconButton>
+                <IconButton color="inherit">
+                  <AccountCircle />
+                </IconButton>
+              </div>
+            </Menu>
+          ) : (
+            <div
+              style={{
+                color: "#BCBCCB"
+              }}
+            >
+              <IconButton color="inherit">
+                <Badge color="secondary">
+                  <MailIcon />
+                </Badge>
+              </IconButton>
+              <IconButton color="inherit">
+                <Badge color="secondary">
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+              <span style={{ color: "black", cursor: "pointer" }}>
+                John Doe
+              </span>
+              <IconButton color="inherit">
+                <AccountCircle />
+              </IconButton>
+            </div>
+          )}
         </Toolbar>
       </AppBar>
       <Drawer
