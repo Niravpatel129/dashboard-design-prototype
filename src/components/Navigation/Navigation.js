@@ -91,8 +91,7 @@ export default function Navigation({ selected }) {
         >
           <h3
             style={{
-              marginLeft: "0.9rem",
-              paddingLeft: "3.8rem"
+              paddingLeft: "4.4rem"
             }}
           >
             {!drawerView && <span className="title">AWESOME DASH</span>}
