@@ -1,12 +1,12 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import "./App.css";
 
 // Pages
-const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
-const DashboardPage = lazy(() => import("./pages/DashboardPage/DashboardPage"));
+import LoginPage from "./pages/LoginPage/LoginPage";
+import DashboardPage from "./pages/DashboardPage/DashboardPage";
 
 function App() {
   return (
