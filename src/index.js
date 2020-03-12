@@ -4,21 +4,9 @@ import App from "./App";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducers from "./redux/reducers";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/core";
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: "#43425D"
-    },
-    secondary: {
-      main: "#A5A4BF"
-    }
-  },
-  typography: {
-    fontSize: 12.5
-  }
-});
+import theme from "./themes/DefaultTheme";
 
 const store = createStore(reducers);
 
