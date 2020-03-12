@@ -10,10 +10,6 @@ import List from "@material-ui/core/List";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ListItem from "@material-ui/core/ListItem";
-import MailIcon from "@material-ui/icons/Mail";
-import Badge from "@material-ui/core/Badge";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import ListItemText from "@material-ui/core/ListItemText";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -101,54 +97,7 @@ export default function Navigation({ selected }) {
           </h3>
 
           {/* Mobile  */}
-          {!isDesktop ? (
-            <Menu>
-              <div
-                style={{
-                  color: "#BCBCCB",
-                  display: "flex",
-                  flexDirection: "column"
-                }}
-              >
-                <IconButton color="inherit">
-                  <Badge color="secondary">
-                    <MailIcon />
-                  </Badge>
-                </IconButton>
-                <IconButton color="inherit">
-                  <Badge color="secondary">
-                    <NotificationsIcon />
-                  </Badge>
-                </IconButton>
-                <IconButton color="inherit">
-                  <AccountCircle />
-                </IconButton>
-              </div>
-            </Menu>
-          ) : (
-            <div
-              style={{
-                color: "#BCBCCB"
-              }}
-            >
-              <IconButton color="inherit">
-                <Badge color="secondary">
-                  <MailIcon />
-                </Badge>
-              </IconButton>
-              <IconButton color="inherit">
-                <Badge color="secondary">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
-              <span style={{ color: "black", cursor: "pointer" }}>
-                John Doe
-              </span>
-              <IconButton color="inherit">
-                <AccountCircle />
-              </IconButton>
-            </div>
-          )}
+          <Menu isDesktop={isDesktop} />
         </Toolbar>
       </AppBar>
       <Drawer
