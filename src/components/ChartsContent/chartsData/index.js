@@ -1,5 +1,40 @@
 import axios from "axios";
 
+// Helpers
+function dateConverter(UNIX_timestamp) {
+  const a = new Date(UNIX_timestamp * 1000);
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
+  const year = a.getFullYear();
+  const month = months[a.getMonth()];
+  const date = a.getDate();
+
+  const time = date + " " + month + " " + year;
+  return time;
+}
+
+function timeConverter(UNIX_timestamp) {
+  var a = new Date(UNIX_timestamp * 1000);
+
+  var hour = a.getHours();
+  var min = a.getMinutes();
+  var sec = a.getSeconds();
+  var time = hour + ":" + min + ":" + sec;
+  return time;
+}
+
 const getChart4Data = async () => {
   let res = await axios.get("https://www.mercadobitcoin.net/api/BTC/trades");
 
@@ -25,7 +60,21 @@ const getChart4Data = async () => {
         text: "Number of Trade Price"
       }
     },
-
+    xAxis: [
+      {
+        labels: {
+          formatter: function() {
+            const date = dateConverter(this.value);
+            return date;
+          }
+        }
+      }
+    ],
+    tooltip: {
+      pointFormatter: function() {
+        return "<b>" + timeConverter(this.x) + " UTC" + "</b>";
+      }
+    },
     series: [
       {
         name: "Btc Buy Price",
