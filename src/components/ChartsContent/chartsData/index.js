@@ -72,7 +72,7 @@ const getChart4Data = async () => {
     ],
     tooltip: {
       pointFormatter: function() {
-        return "<b>" + timeConverter(this.x) + " UTC" + "</b>";
+        return "<b>" + timeConverter(this.x) + " UTC</b>";
       }
     },
     series: [
