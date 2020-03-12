@@ -1,38 +1,7 @@
 import axios from "axios";
 
-// Helpers
-function dateConverter(UNIX_timestamp) {
-  const a = new Date(UNIX_timestamp * 1000);
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-  ];
-  const month = months[a.getMonth()];
-  const date = a.getDate();
-
-  const time = date + " " + month;
-  return time;
-}
-
-function timeConverter(UNIX_timestamp) {
-  var a = new Date(UNIX_timestamp * 1000);
-
-  var hour = a.getHours();
-  var min = a.getMinutes();
-  var sec = a.getSeconds();
-  var time = hour + ":" + min + ":" + sec;
-  return time;
-}
+import DateConverter from "../../../helpers/ConvertDate";
+import TimeConverter from "../../../helpers/ConvertTime";
 
 const getChart4Data = async () => {
   let res = await axios.get("https://www.mercadobitcoin.net/api/BTC/trades");
@@ -63,7 +32,7 @@ const getChart4Data = async () => {
       {
         labels: {
           formatter: function() {
-            const date = dateConverter(this.value);
+            const date = DateConverter(this.value);
             return date;
           }
         }
@@ -71,7 +40,7 @@ const getChart4Data = async () => {
     ],
     tooltip: {
       pointFormatter: function() {
-        return "<b>" + timeConverter(this.x) + " UTC</b>";
+        return "<b>" + TimeConverter(this.x) + " UTC</b>";
       }
     },
     series: [
@@ -170,7 +139,7 @@ const ChartsData = {
   dataSet4: getChart4Data(),
   dataSet5: {
     title: {
-      text: "Chart.update"
+      text: "Categorical Bar Chart"
     },
 
     subtitle: {
