@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import clsx from "clsx";
 
+import Menu from "./SubComponents/Menu";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import AppBar from "@material-ui/core/AppBar";
 import List from "@material-ui/core/List";
@@ -10,19 +11,17 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ListItem from "@material-ui/core/ListItem";
 import MailIcon from "@material-ui/icons/Mail";
+import Badge from "@material-ui/core/Badge";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import NotificationsIcon from "@material-ui/icons/Notifications";
 import ListItemText from "@material-ui/core/ListItemText";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Toolbar from "@material-ui/core/Toolbar";
 import Drawer from "@material-ui/core/Drawer";
 import Icon from "@material-ui/core/Icon";
 
-import Badge from "@material-ui/core/Badge";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-
-import "./Navigation.scss";
 import useStyles from "./Navigation-styles";
-import Menu from "./SubComponents/Menu";
+import "./Navigation.scss";
 
 // Holding the possible routes of the sidebar
 const drawerRoutes = [
@@ -63,6 +62,10 @@ export default function Navigation({ selected }) {
   const dispatch = useDispatch();
 
   const [drawerView, setDrawerView] = React.useState(false);
+
+  useEffect(() => {
+    dispatch({ type: "DRAWER_CLOSE" });
+  }, [dispatch]);
 
   const handleDrawerToggle = () => {
     setDrawerView(!drawerView);
