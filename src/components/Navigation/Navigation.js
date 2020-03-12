@@ -19,8 +19,8 @@ import Badge from "@material-ui/core/Badge";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 
-import "./NavBar.scss";
-import useStyles from "./NavBar-styles";
+import "./Navigation.scss";
+import useStyles from "./Navigation-styles";
 
 // Holding the possible routes of the sidebar
 const drawerRoutes = [
@@ -54,7 +54,7 @@ const drawerRoutes = [
   }
 ];
 
-export default function NavBar({ selected }) {
+export default function Navigation({ selected }) {
   const classes = useStyles();
   const history = useHistory();
   const dispatch = useDispatch();
@@ -72,7 +72,7 @@ export default function NavBar({ selected }) {
   };
 
   return (
-    <nav className={classes.root}>
+    <nav className={clsx(classes.root, "Navigation")}>
       <CssBaseline />
       <AppBar
         color="default"
@@ -84,8 +84,17 @@ export default function NavBar({ selected }) {
       >
         <Toolbar
           variant="dense"
-          style={{ display: "flex", justifyContent: "flex-end" }}
+          style={{ display: "flex", justifyContent: "space-between" }}
         >
+          <h3
+            style={{
+              marginLeft: "0.9rem",
+              paddingLeft: "3.8rem"
+            }}
+          >
+            {!drawerView && <span className="title">AWESOME DASH</span>}
+          </h3>
+
           <div style={{ color: "#BCBCCB" }}>
             <IconButton color="inherit">
               <Badge color="secondary">
@@ -106,7 +115,7 @@ export default function NavBar({ selected }) {
       </AppBar>
       <Drawer
         variant="permanent"
-        className={clsx(classes.drawer, {
+        className={clsx(classes.drawer, "drawer", {
           [classes.drawerOpen]: drawerView,
           [classes.drawerClose]: !drawerView
         })}
@@ -122,7 +131,10 @@ export default function NavBar({ selected }) {
           style={{ justifyContent: "center" }}
         >
           {drawerView && (
-            <h3 style={{ color: "white", marginLeft: "0.9rem", flex: 1 }}>
+            <h3
+              className="drawerTitle"
+              style={{ color: "white", marginLeft: "0.9rem", flex: 1 }}
+            >
               AWESOME DASH
             </h3>
           )}

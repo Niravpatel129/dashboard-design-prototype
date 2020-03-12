@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     justifyContent: "flex-end",
     margin: theme.spacing(0, 1),
-    ...theme.mixins.toolbar
+    marginTop: "0.05rem"
   },
   content: {
     flexGrow: 1,

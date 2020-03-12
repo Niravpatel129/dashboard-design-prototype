@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import Navbar from "../../components/Navigation/NavBar";
+import Navigation from "../../components/Navigation/Navigation";
 import ChartsContent from "../../components/ChartsContent/ChartsContent";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
@@ -17,7 +17,7 @@ function DashboardPage() {
 
   return (
     <section>
-      <Navbar selected="dashboard" />
+      <Navigation selected="dashboard" />
       <main className={clsx(classes.toolbarsOffset, "DashboardPage")}>
         <ChartsContent />
       </main>
