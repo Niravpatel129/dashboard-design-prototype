@@ -17,7 +17,6 @@ function dateConverter(UNIX_timestamp) {
     "Nov",
     "Dec"
   ];
-  const year = a.getFullYear();
   const month = months[a.getMonth()];
   const date = a.getDate();
 
