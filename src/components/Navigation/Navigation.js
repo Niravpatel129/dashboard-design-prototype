@@ -4,16 +4,16 @@ import { useHistory } from "react-router-dom";
 import clsx from "clsx";
 
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import MailIcon from "@material-ui/icons/Mail";
+import ListItemText from "@material-ui/core/ListItemText";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Toolbar from "@material-ui/core/Toolbar";
+import Drawer from "@material-ui/core/Drawer";
 import Icon from "@material-ui/core/Icon";
 
 import Badge from "@material-ui/core/Badge";
