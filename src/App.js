@@ -1,10 +1,8 @@
 import React from "react";
-
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import "./App.css";
 
-// Pages
 import LoginPage from "./pages/LoginPage/LoginPage";
 import DashboardPage from "./pages/DashboardPage/DashboardPage";
 
