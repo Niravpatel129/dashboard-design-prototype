@@ -26,7 +26,7 @@ const chartdata1 = {
   },
   series: [
     {
-      color: "#A4A1FB",
+      color: "#B7EFFF",
       data: [5, 3, 4, 10, 9, 4, 12, 3, 7, 7, 4, 2],
       maxPointWidth: 15
     }

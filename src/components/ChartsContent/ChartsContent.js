@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import Highcharts from "highcharts";
 import ChartsData from "./chartsData";
 
+import MiniChart from "./subComponents/MiniChart/MiniChart";
+import DataTable from "../DataTable/DataTable";
+
 import Grid from "@material-ui/core/Grid";
 
 import "./ChartsContent.scss";
-import MiniChart from "./subComponents/MiniChart/MiniChart";
 
 Highcharts.setOptions({
   colors: ["#B7EFFF", "#A4A1FB", "#9CF0C6"]
@@ -18,7 +20,6 @@ function ChartsContent() {
     Highcharts.chart("chart2", ChartsData.dataSet2);
     Highcharts.chart("chart3", ChartsData.dataSet3);
     Highcharts.chart("chart4", ChartsData.dataSet4);
-    Highcharts.chart("chart6", ChartsData.dataSet6);
     Highcharts.chart("chart7", ChartsData.dataSet7);
 
     // Promise result data
@@ -62,7 +63,7 @@ function ChartsContent() {
           <div id="chart5" />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <div id="chart6" />
+          <DataTable />
         </Grid>
         <Grid item xs={12} sm={6}>
           <div id="chart7" />
