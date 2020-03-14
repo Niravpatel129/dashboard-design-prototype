@@ -13,14 +13,16 @@ Highcharts.setOptions({
 
 function ChartsContent() {
   useEffect(() => {
-    Highcharts.chart("chart1", ChartsData.dataSet7);
-    Highcharts.chart("chart2", ChartsData.dataSet8);
-    Highcharts.chart("chart3", ChartsData.dataSet9);
-    Highcharts.chart("chart4", ChartsData.dataSet6);
-    Highcharts.chart("chart6", ChartsData.dataSet3);
-    Highcharts.chart("chart7", ChartsData.dataSet5);
+    // Static data
+    Highcharts.chart("chart1", ChartsData.dataSet1);
+    Highcharts.chart("chart2", ChartsData.dataSet2);
+    Highcharts.chart("chart3", ChartsData.dataSet3);
+    Highcharts.chart("chart4", ChartsData.dataSet4);
+    Highcharts.chart("chart6", ChartsData.dataSet6);
+    Highcharts.chart("chart7", ChartsData.dataSet7);
 
-    ChartsData.dataSet4.then(res => {
+    // Promise result data
+    ChartsData.dataSet5.then(res => {
       Highcharts.chart("chart5", res);
     });
   }, []);

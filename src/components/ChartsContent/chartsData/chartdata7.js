@@ -1,34 +1,48 @@
 const chartdata7 = {
-  chart: {
-    type: "column",
-    width: 120,
-    height: 100,
-    margin: [0, 0, 20, 0],
-    backgroundColor: "transparent"
-  },
-  plotOptions: {
-    column: {
-      pointPadding: 0,
-      groupPadding: 0
-    }
-  },
   title: {
-    text: ""
+    text: "Categorical Bar Chart"
   },
+
+  subtitle: {
+    text: "Plain"
+  },
+
   xAxis: {
-    visible: false
+    categories: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ]
   },
-  yAxis: {
-    visible: false
-  },
-  legend: {
-    enabled: false
-  },
+
   series: [
     {
-      color: "#B7EFFF",
-      data: [5, 3, 4, 10, 9, 4, 12, 3, 7, 7, 4, 2],
-      maxPointWidth: 15
+      type: "column",
+      colorByPoint: true,
+      data: [
+        29.9,
+        71.5,
+        106.4,
+        129.2,
+        144.0,
+        176.0,
+        135.6,
+        148.5,
+        216.4,
+        194.1,
+        95.6,
+        54.4
+      ],
+      showInLegend: false
     }
   ]
 };
