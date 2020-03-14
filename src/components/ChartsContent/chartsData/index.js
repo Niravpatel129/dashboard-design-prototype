@@ -3,6 +3,11 @@ import axios from "axios";
 import DateConverter from "../../../helpers/ConvertDate";
 import TimeConverter from "../../../helpers/ConvertTime";
 
+// Eventually all charts should be modualzied
+import chart7 from "./chartdata7";
+import chart8 from "./chartdata8";
+import chart9 from "./chartdata9";
+
 const getChart4Data = async () => {
   let res = await axios.get("https://www.mercadobitcoin.net/api/BTC/trades");
 
@@ -410,7 +415,10 @@ const ChartsData = {
         ]
       }
     ]
-  }
+  },
+  dataSet7: chart7,
+  dataSet8: chart8,
+  dataSet9: chart9
 };
 
 export default ChartsData;
