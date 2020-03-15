@@ -1,5 +1,4 @@
 import React from "react";
-import tableData from "./data/TableData";
 
 import TableContainer from "@material-ui/core/TableContainer";
 import Table from "@material-ui/core/Table";
@@ -9,6 +8,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableBody from "@material-ui/core/TableBody";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
+import tableData from "./data/tableData";
 import "./DataTable.scss";
 
 const useStyles = makeStyles(() => ({
@@ -56,6 +56,7 @@ function DataTable() {
             </TableHead>
             <TableBody>{renderTable()}</TableBody>
           </Table>
+          <p className="showMore">Show More</p>
         </TableContainer>
       </div>
     </div>
