@@ -19,6 +19,9 @@ const chartdata5 = async () => {
     }, []);
 
   return {
+    credits: {
+      enabled: false
+    },
     title: {
       text: "BTC Trades"
     },

@@ -1,4 +1,7 @@
 const chartdata6 = {
+  credits: {
+    enabled: false
+  },
   chart: {
     type: "bar"
   },

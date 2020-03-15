@@ -1,4 +1,7 @@
 const chartdata7 = {
+  credits: {
+    enabled: false
+  },
   title: {
     text: "Categorical Bar Chart"
   },

@@ -1,4 +1,7 @@
 const chartdata3 = {
+  credits: {
+    enabled: false
+  },
   chart: {
     type: "column",
     width: 120,

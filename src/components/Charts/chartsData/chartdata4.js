@@ -1,4 +1,7 @@
 const chartsData4 = {
+  credits: {
+    enabled: false
+  },
   chart: {
     type: "area"
   },
