@@ -1,3 +1,5 @@
+import Highcharts from "highcharts";
+
 const chartsData4 = {
   credits: {
     enabled: false
@@ -44,6 +46,7 @@ const chartsData4 = {
       "{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>warheads in {point.x}"
   },
   plotOptions: {
+    colorByPoint: true,
     area: {
       pointStart: 1940,
       marker: {
@@ -61,6 +64,23 @@ const chartsData4 = {
   series: [
     {
       name: "USA",
+      fillColor: {
+        linearGradient: {
+          x1: 0,
+          y1: 0,
+          x2: 0,
+          y2: 1
+        },
+        stops: [
+          [0, "#B7EFFF"],
+          [
+            1,
+            Highcharts.color("#B7EFFF")
+              .setOpacity(0)
+              .get("rgba")
+          ]
+        ]
+      },
       data: [
         null,
         null,
@@ -144,6 +164,23 @@ const chartsData4 = {
     },
     {
       name: "USSR/Russia",
+      fillColor: {
+        linearGradient: {
+          x1: 0,
+          y1: 0,
+          x2: 0,
+          y2: 1
+        },
+        stops: [
+          [0, "#A4A1FB"],
+          [
+            1,
+            Highcharts.color("#A4A1FB")
+              .setOpacity(0)
+              .get("rgba")
+          ]
+        ]
+      },
       data: [
         null,
         null,
