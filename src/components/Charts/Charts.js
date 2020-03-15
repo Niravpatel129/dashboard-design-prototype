@@ -7,13 +7,13 @@ import DataTable from "../DataTable/DataTable";
 
 import Grid from "@material-ui/core/Grid";
 
-import "./ChartsContent.scss";
+import "./Charts.scss";
 
 Highcharts.setOptions({
   colors: ["#B7EFFF", "#A4A1FB", "#9CF0C6"]
 });
 
-function ChartsContent() {
+function Charts() {
   useEffect(() => {
     // Static data
     Highcharts.chart("chart1", ChartsData.dataSet1);
@@ -29,7 +29,7 @@ function ChartsContent() {
   }, []);
 
   return (
-    <section className="ChartsContent">
+    <section className="Charts">
       <h2>Overview</h2>
       <Grid container spacing={3} justify="space-between">
         <Grid item xs={12} sm={3}>
@@ -73,4 +73,4 @@ function ChartsContent() {
   );
 }
 
-export default ChartsContent;
+export default Charts;

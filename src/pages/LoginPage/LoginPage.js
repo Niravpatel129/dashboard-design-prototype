@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-
-import Login from "../../components/Login/Login";
-import Register from "../../components/Register/Register";
-import ForgotPassword from "../../components/ForgotPassword/ForgotPassword";
+import React, { useState, lazy, Suspense } from "react";
 
 import Bg from "../../assets/images/bg.png";
 import "./LoginPage.scss";
+
+const Login = lazy(() => import("../../components/Login/Login"));
+const Register = lazy(() => import("../../components/Register/Register"));
+const Forgot = lazy(() => import("../../components/Forgot/Forgot"));
 
 function LoginPage() {
   const [pageModule, setPageModule] = useState();
@@ -16,8 +16,8 @@ function LoginPage() {
         return <Login changeRender={setPageModule} />;
       case "register":
         return <Register changeRender={setPageModule} />;
-      case "forgotPassword":
-        return <ForgotPassword changeRender={setPageModule} />;
+      case "Forgot":
+        return <Forgot changeRender={setPageModule} />;
       default:
         return <Login changeRender={setPageModule} />;
     }
@@ -29,7 +29,7 @@ function LoginPage() {
         <img src={Bg} alt="Background" />
       </div>
       <div className="LoginSection">
-        {renderSelected()}
+        <Suspense fallback="...">{renderSelected()}</Suspense>
         <p className="termsCapton">Term of use. Privacy policy</p>
       </div>
     </section>

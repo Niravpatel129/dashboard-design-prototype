@@ -87,10 +87,7 @@ function Login({ changeRender }) {
           gutterBottom
           className={classes.caption}
         >
-          <p
-            className="redirectLink"
-            onClick={() => changeRender("forgotPassword")}
-          >
+          <p className="redirectLink" onClick={() => changeRender("Forgot")}>
             Forgot Password
           </p>
         </Typography>

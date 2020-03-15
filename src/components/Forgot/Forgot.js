@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
-import "./ForgotPassword.scss";
+import "./Forgot.scss";
 
 const useStyles = makeStyles({
   caption: {
@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   }
 });
 
-function ForgotPassword({ changeRender }) {
+function Forgot({ changeRender }) {
   const classes = useStyles();
 
   const onSubmitRequest = () => {
@@ -21,7 +21,7 @@ function ForgotPassword({ changeRender }) {
   };
 
   return (
-    <section className="ForgotPassword">
+    <section className="Forgot">
       <div className="Title">
         <Typography variant="h4" component="h4" align="center">
           Password Reset
@@ -55,4 +55,4 @@ function ForgotPassword({ changeRender }) {
   );
 }
 
-export default ForgotPassword;
+export default Forgot;
