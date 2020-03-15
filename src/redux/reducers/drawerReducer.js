@@ -1,4 +1,4 @@
-const close = { paddingLeft: "5.9rem", paddingTop: "4.4rem" };
+const close = { paddingLeft: "5.37rem", paddingTop: "4.4rem" };
 const open = { paddingLeft: "17rem", paddingTop: "4.4rem" };
 
 const drawerReducer = (state = close, action) => {

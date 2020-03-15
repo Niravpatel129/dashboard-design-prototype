@@ -12,7 +12,12 @@ import Badge from "@material-ui/core/Badge";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import IconButton from "@material-ui/core/IconButton";
+import Icon from "@material-ui/core/Icon";
 import { makeStyles } from "@material-ui/core/styles";
+
+import avatar from "../../../assets/images/avatar.jpg";
+import "./Menu.scss";
+import clsx from "clsx";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -57,7 +62,7 @@ function Menu({ isDesktop }) {
     prevOpen.current = open;
   }, [open]);
   return (
-    <div className={classes.root}>
+    <div className={clsx("Menu", classes.root)}>
       {!isDesktop ? (
         <div>
           <Button
@@ -124,20 +129,29 @@ function Menu({ isDesktop }) {
             color: "#BCBCCB"
           }}
         >
-          <IconButton color="inherit">
-            <Badge color="secondary">
-              <MailIcon />
-            </Badge>
-          </IconButton>
-          <IconButton color="inherit">
-            <Badge color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <span style={{ color: "black", cursor: "pointer" }}>John Doe</span>
-          <IconButton color="inherit">
-            <AccountCircle />
-          </IconButton>
+          <span
+            className="userBlock"
+            style={{ color: "black", cursor: "pointer" }}
+          >
+            <IconButton color="secondary">
+              <Badge>
+                <MailIcon />
+              </Badge>
+            </IconButton>
+            <IconButton color="secondary">
+              <Badge>
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+
+            <span className="user">
+              <p>John Doe</p>
+              <Icon className="fontIcon">expand_more</Icon>
+              <div className="avatarIcon">
+                <img alt="user avatar" src={avatar}></img>
+              </div>
+            </span>
+          </span>
         </div>
       )}
     </div>
