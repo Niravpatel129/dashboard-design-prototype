@@ -93,7 +93,12 @@ function Login({ changeRender }) {
         </Typography>
         <br />
         <div className="buttons">
-          <Button variant="contained" onClick={handleLogin} color="primary">
+          <Button
+            variant="contained"
+            onClick={handleLogin}
+            color="primary"
+            disabled={userData.username === "" || userData.password === ""}
+          >
             Login
           </Button>
           <Button variant="outlined" onClick={() => changeRender("register")}>
